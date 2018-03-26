@@ -12,7 +12,7 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
     let locationManager = CLLocationManager()
-    let region = CLBeaconRegion(proximityUUID: UUID(uuidString:"B0702880-A295-A8AB-F734-031A98A512DE")!, identifier: "Macbook")
+    let region = CLBeaconRegion(proximityUUID: UUID(uuidString:"B58185D4-0D49-4019-A557-44B785DF5CC5")!, identifier: "PaulT")
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
