@@ -6,6 +6,7 @@
 import UIKit
 import CoreLocation
 import CoreBluetooth
+import UserNotifications
 
 class BroadcastViewController: UIViewController, UIPageViewControllerDelegate {
     
@@ -20,19 +21,31 @@ class BroadcastViewController: UIViewController, UIPageViewControllerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.setNeedsStatusBarAppearanceUpdate()
+        
+        // Request permission to display alerts and play sounds.
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
+            granted, error in
+            if granted {
+                // Enable or disable features based on authorization.
+            }
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.iOSWhiteColor()
-        
         let UUID: UUID = iBeaconConfiguration.uuid
-        //let major: CLBeaconMajorValue = CLBeaconMajorValue(arc4random() % 10 + 1)
-        let major: CLBeaconMajorValue = CLBeaconMajorValue(1)
-        let minor: CLBeaconMinorValue = CLBeaconMinorValue(arc4random() % 200 + 1)
-        self.beacon = CLBeaconRegion(proximityUUID: UUID, major: major, minor: minor, identifier: "PaulT")
+        let major: CLBeaconMajorValue = CLBeaconMajorValue(iBeaconConfiguration.major)
+        let minor: CLBeaconMinorValue = CLBeaconMinorValue(iBeaconConfiguration.minor)
+        let identifier = iBeaconConfiguration.identifier
+        self.beacon = CLBeaconRegion(
+            proximityUUID: UUID,
+            major: major,
+            minor: minor,
+            identifier: identifier
+        )
         self.peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
-        uuidLabel.text = "major:\(self.beacon!.major!)\t" + "minor:\(self.beacon!.minor!)"
+        uuidLabel.text = "major:\(self.beacon!.major!)" + " " + "minor:\(self.beacon!.minor!)"
     }
     
     deinit {
@@ -86,7 +99,7 @@ extension BroadcastViewController {
             return
         }
         
-        if (state == .poweredOff && !self.broadcasting) {
+        if (state == .poweredOff && !self.broadcasting) { // iOS 11.3.1 system bugs may cause this alert shows unexpectedly
             let OKAction: UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             
             let alert: UIAlertController = UIAlertController(
@@ -135,7 +148,7 @@ extension BroadcastViewController {
     
     // MARK: - Broadcast Beacon
     
-    func advertising(start: Bool) -> Void {
+    @objc func advertising(start: Bool) -> Void {
         if self.peripheralManager == nil {
             return
         }
@@ -152,11 +165,18 @@ extension BroadcastViewController {
             let serviceUUIDs: Array<CBUUID> = [CBUUID(nsuuid: UUID)]
             
             var peripheralData: Dictionary<String, Any> =
-                self.beacon!.peripheralData(withMeasuredPower: nil) as NSDictionary as! Dictionary<String, Any>
+                self.beacon!.peripheralData(withMeasuredPower: nil)
+                    as NSDictionary as! Dictionary<String, Any>
             peripheralData[CBAdvertisementDataLocalNameKey] = "iBeaconSender"
             peripheralData[CBAdvertisementDataServiceUUIDsKey] = serviceUUIDs
             
             self.peripheralManager!.startAdvertising(peripheralData)
+            
+            //************************************************************************
+
+            
+            
+            //************************************************************************
         }
     }
 }

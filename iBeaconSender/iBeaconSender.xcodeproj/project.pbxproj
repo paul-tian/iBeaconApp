@@ -17,6 +17,7 @@
 		DA64151320A2E58000A6E48B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64151220A2E58000A6E48B /* UIColorExtension.swift */; };
 		DA64151A20A2E61100A6E48B /* MiscellaneousExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64151920A2E61100A6E48B /* MiscellaneousExtension.swift */; };
 		DA64151E20A2E6DF00A6E48B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64151D20A2E6DF00A6E48B /* Configuration.swift */; };
+		DADB141820B3BCCB00E535E3 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADB141720B3BCCB00E535E3 /* Notification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		DA64151220A2E58000A6E48B /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DA64151920A2E61100A6E48B /* MiscellaneousExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscellaneousExtension.swift; sourceTree = "<group>"; };
 		DA64151D20A2E6DF00A6E48B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		DADB141720B3BCCB00E535E3 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				DA6414DD20A2E45300A6E48B /* AppDelegate.swift */,
+				DADB141720B3BCCB00E535E3 /* Notification.swift */,
 				DA6414DF20A2E45300A6E48B /* BroadcastViewController.swift */,
 				DA6414E120A2E45300A6E48B /* Main.storyboard */,
 				DA64151C20A2E6B500A6E48B /* Supporting Files */,
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA6414E020A2E45300A6E48B /* BroadcastViewController.swift in Sources */,
+				DADB141820B3BCCB00E535E3 /* Notification.swift in Sources */,
 				DA6414DE20A2E45300A6E48B /* AppDelegate.swift in Sources */,
 				DA64151E20A2E6DF00A6E48B /* Configuration.swift in Sources */,
 				DA64151A20A2E61100A6E48B /* MiscellaneousExtension.swift in Sources */,

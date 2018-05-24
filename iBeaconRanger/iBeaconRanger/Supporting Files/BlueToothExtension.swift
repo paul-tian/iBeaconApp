@@ -23,6 +23,43 @@ extension RangerViewController: CLLocationManagerDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+        let knownBeacons = beacons.filter{$0.proximity != CLProximity.unknown}
+        if knownBeacons.count > 0 {
+            flag02 = false
+            if flag01 != true {
+                lastClosetBeacon = currentClosetBeacon
+                flag01 = true
+                if view.window != nil {
+                    fetchImage()
+                }
+            }
+            currentClosetBeacon = knownBeacons[0] as CLBeacon
+            print(currentClosetBeacon!)
+            let printInfo = "You are now in area" + String(format: "%02d", currentClosetBeacon!.major.intValue)
+            areaLabel.text = printInfo
+            if lastClosetBeacon != currentClosetBeacon {
+                lastClosetBeacon = currentClosetBeacon
+                if view.window != nil {
+                    fetchImage()
+                }
+                
+            }
+        } else {
+            flag01 = false
+            areaLabel.text = "Welcome! You're not in range right now."
+            if flag02 != true {
+                print("No Beacons detected.")
+                lastClosetBeacon = nil
+                flag02 = true
+                imageURL = nil
+                if view.window != nil {
+                    fetchImage()
+                }
+            }
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         guard status != .denied else {
             notifiNoAuthorization()
@@ -56,10 +93,12 @@ extension RangerViewController: CBPeripheralManagerDelegate {
     
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         let state: CBManagerState = peripheralManager!.state
-//        if state == .poweredOff {
-//            self.areaLabel.text = "Bluetooth Off"
-//            notifiBluetoothOff()
-//        }
+        
+        if state == .poweredOff { // iOS 11.3.1 system bugs may cause this alert shows unexpectedly
+            self.areaLabel.text = "Bluetooth Off"
+            notifiBluetoothOff()
+        }
+        
         if state == .unsupported {
             self.areaLabel.text = "Unsupported Beacon"
             notifiUnsupported()
