@@ -28,7 +28,7 @@ extension RangerViewController: CLLocationManagerDelegate {
                 lastClosetBeacon = currentClosetBeacon
                 flag01 = true
                 if view.window != nil {
-                    fetchJson()
+                    fetchImage()
                 }
             }
             currentClosetBeacon = knownBeacons[0] as CLBeacon
@@ -38,7 +38,7 @@ extension RangerViewController: CLLocationManagerDelegate {
             if lastClosetBeacon != currentClosetBeacon {
                 lastClosetBeacon = currentClosetBeacon
                 if view.window != nil {
-                    fetchJson()
+                    fetchImage()
                 }
                 
             }
@@ -49,9 +49,9 @@ extension RangerViewController: CLLocationManagerDelegate {
                 print("No Beacons detected.")
                 lastClosetBeacon = nil
                 flag02 = true
-                jsonURL = nil
+                imageURL = nil
                 if view.window != nil {
-                    fetchJson()
+                    fetchImage()
                 }
             }
         }

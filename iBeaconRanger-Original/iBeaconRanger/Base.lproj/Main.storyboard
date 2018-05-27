@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Od6-Zp-lPT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Ranger View Controller-->
+        <scene sceneID="SpS-UH-YOs">
+            <objects>
+                <viewController id="Od6-Zp-lPT" customClass="RangerViewController" customModule="iBeaconRanger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nba-Eh-9gf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yaL-u1-lHD">
+                                <rect key="frame" x="0.0" y="140" width="375" height="494"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="667" translatesAutoresizingMaskIntoConstraints="NO" id="KKT-bW-3PG">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="KKT-bW-3PG" firstAttribute="leading" secondItem="yaL-u1-lHD" secondAttribute="leading" id="9am-72-qtg"/>
+                                    <constraint firstItem="KKT-bW-3PG" firstAttribute="trailing" secondItem="yaL-u1-lHD" secondAttribute="trailing" id="E9E-gr-myA"/>
+                                    <constraint firstItem="KKT-bW-3PG" firstAttribute="bottom" secondItem="yaL-u1-lHD" secondAttribute="bottom" id="l0u-SI-9AT"/>
+                                    <constraint firstItem="KKT-bW-3PG" firstAttribute="top" secondItem="yaL-u1-lHD" secondAttribute="top" id="sqe-nA-yKq"/>
+                                </constraints>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yui-HM-njg" userLabel="areaLabel">
+                                <rect key="frame" x="144" y="70" width="87" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yaL-u1-lHD" firstAttribute="trailing" secondItem="0qc-YA-HKi" secondAttribute="trailing" id="3vY-nE-7NG"/>
+                            <constraint firstItem="yaL-u1-lHD" firstAttribute="leading" secondItem="0qc-YA-HKi" secondAttribute="leading" id="7nP-1D-urh"/>
+                            <constraint firstItem="yui-HM-njg" firstAttribute="top" secondItem="0qc-YA-HKi" secondAttribute="top" constant="50" id="Egl-xh-ELj"/>
+                            <constraint firstItem="yui-HM-njg" firstAttribute="centerX" secondItem="0qc-YA-HKi" secondAttribute="centerX" id="HRT-jc-Klr"/>
+                            <constraint firstItem="yui-HM-njg" firstAttribute="bottom" secondItem="yaL-u1-lHD" secondAttribute="top" constant="-10" id="T5J-id-F6m"/>
+                            <constraint firstItem="yaL-u1-lHD" firstAttribute="top" secondItem="0qc-YA-HKi" secondAttribute="top" multiplier="7:1" id="XYp-Pq-yco"/>
+                            <constraint firstItem="yaL-u1-lHD" firstAttribute="bottom" secondItem="0qc-YA-HKi" secondAttribute="bottom" multiplier="19:20" id="w9v-ad-P6Q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0qc-YA-HKi"/>
+                    </view>
+                    <connections>
+                        <outlet property="areaLabel" destination="yui-HM-njg" id="5WM-FW-XZU"/>
+                        <outlet property="imageView" destination="KKT-bW-3PG" id="UPp-uh-fvx"/>
+                        <outlet property="scrollView" destination="yaL-u1-lHD" id="N95-Qc-LFl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zzy-h9-20e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-648.79999999999995" y="167.76611694152925"/>
+        </scene>
+    </scenes>
+</document>

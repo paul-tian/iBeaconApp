@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA06968520BA67F1005CDDD8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06968420BA67F1005CDDD8 /* Item.swift */; };
-		DA06968720BA6825005CDDD8 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06968620BA6825005CDDD8 /* ItemCell.swift */; };
 		DA3EAC6120A429B200EF0AE5 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3EAC6020A429B200EF0AE5 /* UIColorExtension.swift */; };
 		DA3EAC6320A429BF00EF0AE5 /* MiscellaneousExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3EAC6220A429BF00EF0AE5 /* MiscellaneousExtension.swift */; };
 		DA3EAC6520A429CC00EF0AE5 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3EAC6420A429CC00EF0AE5 /* Configuration.swift */; };
@@ -18,13 +16,15 @@
 		DA64150620A2E49300A6E48B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA64150420A2E49300A6E48B /* LaunchScreen.storyboard */; };
 		DA6DDB8C20A6C8610025F048 /* RangerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6DDB8B20A6C8610025F048 /* RangerViewController.swift */; };
 		DA6DDB8E20A6D5150025F048 /* BlueToothExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6DDB8D20A6D5150025F048 /* BlueToothExtension.swift */; };
+		DACCFE5720A721CB00EEA8B3 /* area01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DACCFE5520A721CB00EEA8B3 /* area01.jpg */; };
+		DACCFE5820A721CB00EEA8B3 /* area02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DACCFE5620A721CB00EEA8B3 /* area02.jpg */; };
+		DAF6AD6420A7DF3A00FA2C8D /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAF6AD6320A7DF3A00FA2C8D /* default.jpg */; };
+		DAF6AD6620A7E27800FA2C8D /* area03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAF6AD6520A7E27800FA2C8D /* area03.jpg */; };
 		DAF7E7AC20A5466E001C237F /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF7E7AB20A5466E001C237F /* CoreBluetooth.framework */; };
 		DAF7E7AE20A5467F001C237F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF7E7AD20A5467F001C237F /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DA06968420BA67F1005CDDD8 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		DA06968620BA6825005CDDD8 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		DA3EAC6020A429B200EF0AE5 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DA3EAC6220A429BF00EF0AE5 /* MiscellaneousExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscellaneousExtension.swift; sourceTree = "<group>"; };
 		DA3EAC6420A429CC00EF0AE5 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -36,6 +36,10 @@
 		DA64150720A2E49300A6E48B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA6DDB8B20A6C8610025F048 /* RangerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangerViewController.swift; sourceTree = "<group>"; };
 		DA6DDB8D20A6D5150025F048 /* BlueToothExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueToothExtension.swift; sourceTree = "<group>"; };
+		DACCFE5520A721CB00EEA8B3 /* area01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = area01.jpg; sourceTree = "<group>"; };
+		DACCFE5620A721CB00EEA8B3 /* area02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = area02.jpg; sourceTree = "<group>"; };
+		DAF6AD6320A7DF3A00FA2C8D /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
+		DAF6AD6520A7E27800FA2C8D /* area03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = area03.jpg; sourceTree = "<group>"; };
 		DAF7E7AB20A5466E001C237F /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		DAF7E7AD20A5467F001C237F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -57,6 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				DA64150220A2E49300A6E48B /* Assets.xcassets */,
+				DAF6AD6320A7DF3A00FA2C8D /* default.jpg */,
+				DACCFE5520A721CB00EEA8B3 /* area01.jpg */,
+				DACCFE5620A721CB00EEA8B3 /* area02.jpg */,
+				DAF6AD6520A7E27800FA2C8D /* area03.jpg */,
 				DA64150720A2E49300A6E48B /* Info.plist */,
 				DA64150420A2E49300A6E48B /* LaunchScreen.storyboard */,
 				DA6DDB8D20A6D5150025F048 /* BlueToothExtension.swift */,
@@ -89,8 +97,6 @@
 			children = (
 				DA6414FB20A2E49200A6E48B /* AppDelegate.swift */,
 				DA6DDB8B20A6C8610025F048 /* RangerViewController.swift */,
-				DA06968420BA67F1005CDDD8 /* Item.swift */,
-				DA06968620BA6825005CDDD8 /* ItemCell.swift */,
 				DA6414FF20A2E49200A6E48B /* Main.storyboard */,
 				DA3EAC6620A42A8A00EF0AE5 /* Supporting Files */,
 			);
@@ -164,7 +170,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DACCFE5720A721CB00EEA8B3 /* area01.jpg in Resources */,
+				DAF6AD6420A7DF3A00FA2C8D /* default.jpg in Resources */,
+				DACCFE5820A721CB00EEA8B3 /* area02.jpg in Resources */,
 				DA64150620A2E49300A6E48B /* LaunchScreen.storyboard in Resources */,
+				DAF6AD6620A7E27800FA2C8D /* area03.jpg in Resources */,
 				DA64150320A2E49300A6E48B /* Assets.xcassets in Resources */,
 				DA64150120A2E49200A6E48B /* Main.storyboard in Resources */,
 			);
@@ -177,12 +187,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA06968720BA6825005CDDD8 /* ItemCell.swift in Sources */,
 				DA3EAC6320A429BF00EF0AE5 /* MiscellaneousExtension.swift in Sources */,
 				DA3EAC6520A429CC00EF0AE5 /* Configuration.swift in Sources */,
 				DA6DDB8E20A6D5150025F048 /* BlueToothExtension.swift in Sources */,
 				DA6DDB8C20A6C8610025F048 /* RangerViewController.swift in Sources */,
-				DA06968520BA67F1005CDDD8 /* Item.swift in Sources */,
 				DA6414FC20A2E49200A6E48B /* AppDelegate.swift in Sources */,
 				DA3EAC6120A429B200EF0AE5 /* UIColorExtension.swift in Sources */,
 			);

@@ -1,12 +1,5 @@
-### 1st Report
+### Final Report
 ###### 1.Progress
-UI Design 0.8-0.9/1  
-App Func 0.7-0.8/1  
-Coding 0/1  
-###### 2.Mem
-Check UI design  
-Check func  
-confirm if the server which connected with harewares could be accessed
-### 2nd Report
-###### 1.Progress
-###### 2.Mem
+UI Design 1/1<br>
+App Func 1/1<br>
+Coding 1/1<br>

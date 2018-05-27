@@ -2,15 +2,12 @@
 //  RangerViewController.swift
 //  iBeaconRanger
 //
-//  Created by Yuzhe Tian on 2018/5/12.
-//  Copyright © 2018年 Paul Tian. All rights reserved.
-//
 
 import UIKit
 import CoreLocation
 import CoreBluetooth
 
-class RangerViewController: UIViewController, UIScrollViewDelegate {
+class RangerViewController: UIViewController, UITableViewDataSource {
     
     let locationManager = CLLocationManager()
     let region = CLBeaconRegion(
@@ -22,63 +19,47 @@ class RangerViewController: UIViewController, UIScrollViewDelegate {
     var lastClosetBeacon: CLBeacon?
     var flag01 = false
     var flag02 = false
-    
+    private var items = [Item]()
     @IBOutlet weak var areaLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var scrollView: UIScrollView! {
-        didSet{
-            scrollView.minimumZoomScale = 1/25
-            scrollView.maximumZoomScale = 2.0
-            scrollView.delegate = self
-        }
-    }
+    @IBOutlet var tableView: UITableView!
     
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView
-    }
+    var jsonURL: URL?
     
-    var imageURL: URL? {
-        didSet {
-            imageView.image = nil
-        }
-    }
-    
-    func fetchImage() {
-        if imageURL == nil {
-            imageURL = Bundle.main.url(forResource: "default", withExtension: "jpg")
-            // https URL for Internet test according to iOS restriction
-            //imageURL = URL(string: "https://backup.hdslb.com/bfs/mainfront/confirm.png")
-        }
-        
+    func fetchJson() {
         if lastClosetBeacon != nil {
             let major = currentClosetBeacon!.major.intValue
             switch major {
-            case 1: imageURL = Bundle.main.url(forResource: "area01", withExtension: "jpg")
-            // could be replaced by code such as:
-            // imageURL = URL(string: "https://backup.hdslb.com/bfs/mainfront/confirm.png")
-            case 2: imageURL = Bundle.main.url(forResource: "area02", withExtension: "jpg")
-            case 3: imageURL = Bundle.main.url(forResource: "area03", withExtension: "jpg")
-            default: imageURL = Bundle.main.url(forResource: "default", withExtension: "jpg")
+            case 1:
+                jsonURL = URL(string: "http://www.example.com/area01.json")
+            case 2:
+                jsonURL = URL(string: "http://www.example.com/area02.json")
+            case 3:
+                jsonURL = URL(string: "http://www.example.com/area03.json")
+            default:
+                jsonURL = URL(string: "http://www.example.com/default.json")
             }
+        } else {
+            jsonURL = URL(string: "http://www.example.com/default.json")
         }
-        if let url = imageURL {
+        
+        guard let downloadURL = jsonURL else { return }
+        URLSession.shared.dataTask(with: downloadURL) { data, urlResponse, error in
+            guard let data = data, error == nil, urlResponse != nil else {
+                print("something wrong !!!")
+                return
+            }
             do {
-                let urlContents = try? Data(contentsOf: url)
-                if let imageData = urlContents {
-                    imageView.image = UIImage(data: imageData)
-                }
+                let decoder = JSONDecoder()
+                let downloadedItems = try decoder.decode(Items.self, from: data)
+                self.items = downloadedItems.items
+                DispatchQueue.main.async { self.tableView.reloadData() }
+            } catch {
+                print("something wrong after downloaded !!!")
             }
-        }
+        }.resume()
+        
     }
 
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if imageView.image == nil {
-            fetchImage()
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.iOSWhiteColor()
@@ -94,10 +75,42 @@ class RangerViewController: UIViewController, UIScrollViewDelegate {
     deinit {
         self.peripheralManager = nil
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchJson()
+        tableView.tableFooterView = UIView()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell")
+            as? ItemCell else { return UITableViewCell() }
+        
+        cell.itemLabel.text = "Name:" + items[indexPath.row].name
+        cell.priceLabel.text = "Price:" + items[indexPath.row].price
+        
+        if let imageURL = URL(string: items[indexPath.row].image) {
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: imageURL)
+                if let data = data {
+                    let image = UIImage(data: data)
+                    DispatchQueue.main.async {
+                        cell.itemImage.image = image
+                    }
+                }
+            }
+        }
+        return cell
+    }
+    
     
 }
