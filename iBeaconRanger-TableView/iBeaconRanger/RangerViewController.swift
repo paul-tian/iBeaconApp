@@ -2,45 +2,53 @@
 //  RangerViewController.swift
 //  iBeaconRanger
 //
-//  Created by Paul Tian
+//  Created by Yuzhe Tian on 2018/5/12.
 //  Copyright © 2018年 Paul Tian. All rights reserved.
 //
 
 import UIKit
 import CoreLocation
 import CoreBluetooth
-import UserNotifications
 
 class RangerViewController: UIViewController, UITableViewDataSource {
-
-    @IBOutlet weak var areaLabel: UILabel!
-    @IBOutlet var tableView: UITableView!
     
     let locationManager = CLLocationManager()
     let region = CLBeaconRegion(
         proximityUUID: iBeaconConfiguration.uuid,
         identifier: iBeaconConfiguration.identifier
     )
-    
-    var lastClosetBeacon: CLBeacon?
-    var currentClosetBeacon: CLBeacon?
-    
     var peripheralManager: CBPeripheralManager?
-
+    var currentClosetBeacon: CLBeacon?
+    var lastClosetBeacon: CLBeacon?
     var flag01 = false
     var flag02 = false
+    private var items = [Item]()
+    @IBOutlet weak var areaLabel: UILabel!
+    @IBOutlet var tableView: UITableView!
+    
     var jsonURL: URL?
     
-    private var items = [Item]()
-    
-    struct regionCount: Codable {
-        var region: String
-        var count: Int
-    }
-    
-    var statisticInfo = [regionCount]()
-    
-    func fetchJson() {        
+    func fetchJson() {
+//        if lastClosetBeacon != nil {
+//            let major = lastClosetBeacon!.major.intValue
+//            if lastClosetBeacon!.accuracy < iBeaconConfiguration.minimumAccuracy {
+//                switch major {
+//                case 1:
+//                    jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/area01/area01.json")
+//                case 2:
+//                    jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/area02/area02.json")
+//                case 3:
+//                    jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/area03/area03.json")
+//                default:
+//                    jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/default/default.json")
+//                }
+//            } else {
+//                jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/default/default.json")
+//            }
+//        } else {
+//            jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/default/default.json")
+//        }
+        
         if lastClosetBeacon != nil, lastClosetBeacon!.accuracy < iBeaconConfiguration.minimumAccuracy {
             let major = lastClosetBeacon!.major.intValue
             switch major {
@@ -48,6 +56,8 @@ class RangerViewController: UIViewController, UITableViewDataSource {
                 jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/area01/area01.json")
             case 2:
                 jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/area02/area02.json")
+            case 3:
+                jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/area03/area03.json")
             default:
                 jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/default/default.json")
             }
@@ -58,7 +68,7 @@ class RangerViewController: UIViewController, UITableViewDataSource {
         guard let downloadURL = jsonURL else { return }
         URLSession.shared.dataTask(with: downloadURL) { data, urlResponse, error in
             guard let data = data, error == nil, urlResponse != nil else {
-                print("Something wrong while downloading !")
+                print("something wrong !!!")
                 return
             }
             do {
@@ -69,9 +79,10 @@ class RangerViewController: UIViewController, UITableViewDataSource {
                     self.tableView.reloadData()
                 }
             } catch {
-                print("Something wrong after downloaded !")
+                print("something wrong after downloaded !!!")
             }
         }.resume()
+        
     }
 
     override func viewDidLoad() {
@@ -82,53 +93,18 @@ class RangerViewController: UIViewController, UITableViewDataSource {
         if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedAlways {
             locationManager.requestAlwaysAuthorization()
         }
-        
         locationManager.startRangingBeacons(in: region)
         peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
-        
-//        for i in 0...2 {
-//            let newRegion = regionCount(region: "\(i)", count: 0)
-//            statisticInfo.append(newRegion)
-//        } // this func is used to reset region data when developing
-        
-        // use to check if save file already exists
-        if Storage.fileExists("statistic.json", in: .documents) {
-            let savedStatisticInfo = Storage.retrieve("statistic.json", from: .documents, as: [regionCount].self)
-            print(savedStatisticInfo)
-            
-            // restore from saved data
-            for i in 0...iBeaconConfiguration.maximumRegionCount {
-                let savedRegion = regionCount(region: "\(i)", count: savedStatisticInfo[i].count)
-                statisticInfo.append(savedRegion)
-            }
-            
-        } else { // else ready for new region
-            for i in 0...iBeaconConfiguration.maximumRegionCount {
-                let newRegion = regionCount(region: "\(i)", count: 0)
-                statisticInfo.append(newRegion)
-            }
-        }
-        
     }
     
     deinit {
         self.peripheralManager = nil
-        jsonURL = nil
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-    
-        // Request permission to display alerts and play sounds.
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
-            granted, error in
-            if granted {
-                // Enable or disable features based on authorization.
-                print("Notification Authorization Granted.")
-            }
-        }
-        
-         tableView.tableFooterView = UIView()
+        //fetchJson()
+        tableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -163,4 +139,3 @@ class RangerViewController: UIViewController, UITableViewDataSource {
     
     
 }
-

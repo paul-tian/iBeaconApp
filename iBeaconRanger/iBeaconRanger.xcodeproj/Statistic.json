@@ -1,0 +1,64 @@
+{
+    "items":[
+        {
+            "name":"Coka-Cola Classic",
+            "price":"$1.99",
+            "stock":"100",
+            "image": "http://47.101.37.141:8080/ibeacon/area01/pic/Coca-Cola_Classic.jpg"
+        },
+        {
+            "name":"Coka-Cola Diet",
+            "price":"$1.99",
+            "stock":"100",
+            "image": "http://47.101.37.141:8080/ibeacon/area01/pic/Coca-Cola_Diet.jpg"
+        },
+        {
+            "name":"Coka-Cola Zero",
+            "price":"$1.99",
+            "stock":"100",
+            "image": "http://47.101.37.141:8080/ibeacon/area01/pic/Coca-Cola_Zero.jpg"
+        },
+        {
+            "name": "Coca-Cola Life",
+            "price":"$1.99",
+            "stock":"100",
+            "image":"http://47.101.37.141:8080/ibeacon/area01/pic/Coca-Cola_Life.jpg"
+        },
+        {
+            "name":"Fanta Orange Zero",
+            "price":"$1.99",
+            "stock":"100",
+            "image": "http://47.101.37.141:8080/ibeacon/area01/pic/Fanta_Orange_Zero.jpg"
+        },
+        {
+            "name":"Fanta Orange",
+            "price":"$1.99",
+            "stock":"100",
+            "image": "http://47.101.37.141:8080/ibeacon/area01/pic/Fanta_Orange.jpg"
+        },
+        {
+            "name":"Fanta Green Apple",
+            "price":"$1.99",
+            "stock":"100",
+            "image": "http://47.101.37.141:8080/ibeacon/area01/pic/Fanta_Green_Apple.jpg"
+        },
+        {
+            "name":"Fanta Grape",
+            "price":"$1.99",
+            "stock":"100",
+            "image": "http://47.101.37.141:8080/ibeacon/area01/pic/Fanta_Grape.jpg"
+        },
+        {
+            "name":"Sprite",
+            "price":"$1.99",
+            "stock":"100",
+            "image": "http://47.101.37.141:8080/ibeacon/area01/pic/Sprite.jpg"
+        },
+        {
+            "name":"Sprite Zero",
+            "price":"$1.99",
+            "stock":"100",
+            "image": "http://47.101.37.141:8080/ibeacon/area01/pic/Sprite_Zero.jpg"
+        }
+    ]
+}

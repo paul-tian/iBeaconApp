@@ -2,6 +2,9 @@
 //  BlueTooth.swift
 //  iBeaconRanger
 //
+//  Created by Yuzhe Tian on 2018/5/12.
+//  Copyright © 2018年 Paul Tian. All rights reserved.
+//
 
 import Foundation
 import UIKit

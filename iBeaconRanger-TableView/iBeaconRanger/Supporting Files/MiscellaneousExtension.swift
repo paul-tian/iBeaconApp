@@ -1,15 +1,11 @@
 //
 //  MiscellaneousExtension.swift
-//  iBeaconRanger
-//
-//  Created by Paul Tian
-//  Copyright © 2018年 Paul Tian. All rights reserved.
+//  iBeaconReceiver
 //
 
 import Foundation
 
 extension Int {
-    
     var arc4random: Int {
         if self > 0 {
             return Int(arc4random_uniform(UInt32(self)))
@@ -19,15 +15,4 @@ extension Int {
             return 0
         }
     }
-    
 }
-
-extension Double {
-    
-    static func intervalTime() -> Double {
-        return  0.1
-    }
-    
-}
-
-

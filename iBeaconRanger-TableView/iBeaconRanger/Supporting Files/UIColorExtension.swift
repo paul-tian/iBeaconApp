@@ -1,15 +1,11 @@
 //
 //  UIColorExtension.swift
-//  iBeaconRanger
-//
-//  Created by Paul Tian
-//  Copyright © 2018年 Paul Tian. All rights reserved.
+//  iBeaconReceiver
 //
 
 import UIKit
 
 extension UIColor {
-    
     class func rgba(red: UInt, green: UInt, blue: UInt, alpha: CGFloat? = 1.0) -> Self {
         return self.init(
             red: CGFloat(red) / 255.0,
@@ -30,6 +26,4 @@ extension UIColor {
     class func iOSBlueColor() -> Self {
         return self.rgba(red: 0, green: 122, blue: 255)
     }
-    
 }
-

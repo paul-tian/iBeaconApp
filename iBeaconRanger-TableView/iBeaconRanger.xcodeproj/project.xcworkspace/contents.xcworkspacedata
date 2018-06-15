@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Statistic.json">
-   </FileRef>
-   <FileRef
-      location = "self:">
+      location = "self:/Users/paul/Documents/App/iBeaconRanger/iBeaconRanger.xcodeproj">
    </FileRef>
 </Workspace>

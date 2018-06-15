@@ -18,9 +18,6 @@
 		DA64150620A2E49300A6E48B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA64150420A2E49300A6E48B /* LaunchScreen.storyboard */; };
 		DA6DDB8C20A6C8610025F048 /* RangerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6DDB8B20A6C8610025F048 /* RangerViewController.swift */; };
 		DA6DDB8E20A6D5150025F048 /* BlueToothExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6DDB8D20A6D5150025F048 /* BlueToothExtension.swift */; };
-		DA84D86F20C8C3C20031F69F /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84D86E20C8C3C20031F69F /* Notification.swift */; };
-		DA84D87320C8C5E30031F69F /* bubble.wav in Resources */ = {isa = PBXBuildFile; fileRef = DA84D87220C8C5E30031F69F /* bubble.wav */; };
-		DAD1DB8F20C86CB000E376AE /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1DB8E20C86CB000E376AE /* Storage.swift */; };
 		DAF7E7AC20A5466E001C237F /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF7E7AB20A5466E001C237F /* CoreBluetooth.framework */; };
 		DAF7E7AE20A5467F001C237F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF7E7AD20A5467F001C237F /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
@@ -39,9 +36,6 @@
 		DA64150720A2E49300A6E48B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA6DDB8B20A6C8610025F048 /* RangerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangerViewController.swift; sourceTree = "<group>"; };
 		DA6DDB8D20A6D5150025F048 /* BlueToothExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueToothExtension.swift; sourceTree = "<group>"; };
-		DA84D86E20C8C3C20031F69F /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
-		DA84D87220C8C5E30031F69F /* bubble.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bubble.wav; sourceTree = "<group>"; };
-		DAD1DB8E20C86CB000E376AE /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		DAF7E7AB20A5466E001C237F /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		DAF7E7AD20A5467F001C237F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -62,7 +56,6 @@
 		DA3EAC6620A42A8A00EF0AE5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DA84D87220C8C5E30031F69F /* bubble.wav */,
 				DA64150220A2E49300A6E48B /* Assets.xcassets */,
 				DA64150720A2E49300A6E48B /* Info.plist */,
 				DA64150420A2E49300A6E48B /* LaunchScreen.storyboard */,
@@ -98,8 +91,6 @@
 				DA6DDB8B20A6C8610025F048 /* RangerViewController.swift */,
 				DA06968420BA67F1005CDDD8 /* Item.swift */,
 				DA06968620BA6825005CDDD8 /* ItemCell.swift */,
-				DAD1DB8E20C86CB000E376AE /* Storage.swift */,
-				DA84D86E20C8C3C20031F69F /* Notification.swift */,
 				DA6414FF20A2E49200A6E48B /* Main.storyboard */,
 				DA3EAC6620A42A8A00EF0AE5 /* Supporting Files */,
 			);
@@ -175,7 +166,6 @@
 			files = (
 				DA64150620A2E49300A6E48B /* LaunchScreen.storyboard in Resources */,
 				DA64150320A2E49300A6E48B /* Assets.xcassets in Resources */,
-				DA84D87320C8C5E30031F69F /* bubble.wav in Resources */,
 				DA64150120A2E49200A6E48B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,8 +182,6 @@
 				DA3EAC6520A429CC00EF0AE5 /* iBeaconConfiguration.swift in Sources */,
 				DA6DDB8E20A6D5150025F048 /* BlueToothExtension.swift in Sources */,
 				DA6DDB8C20A6C8610025F048 /* RangerViewController.swift in Sources */,
-				DAD1DB8F20C86CB000E376AE /* Storage.swift in Sources */,
-				DA84D86F20C8C3C20031F69F /* Notification.swift in Sources */,
 				DA06968520BA67F1005CDDD8 /* Item.swift in Sources */,
 				DA6414FC20A2E49200A6E48B /* AppDelegate.swift in Sources */,
 				DA3EAC6120A429B200EF0AE5 /* UIColorExtension.swift in Sources */,

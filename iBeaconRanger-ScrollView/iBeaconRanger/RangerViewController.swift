@@ -2,6 +2,9 @@
 //  RangerViewController.swift
 //  iBeaconRanger
 //
+//  Created by Yuzhe Tian on 2018/5/12.
+//  Copyright © 2018年 Paul Tian. All rights reserved.
+//
 
 import UIKit
 import CoreLocation
@@ -50,12 +53,12 @@ class RangerViewController: UIViewController, UIScrollViewDelegate {
         if lastClosetBeacon != nil {
             let major = currentClosetBeacon!.major.intValue
             switch major {
-            case 1:
-                imageURL = URL(string: "http://www.example.com/example.jpg")
-            case 2:
-                imageURL = URL(string: "http://www.example.com/example.jpg")
-            case 3:
-                imageURL = URL(string: "http://www.example.com/example.jpg")
+            case 1: //imageURL = Bundle.main.url(forResource: "area01", withExtension: "jpg")
+                imageURL = URL(string: "http://47.101.37.141:8080/ibeacon/area01.jpg")
+            case 2: //imageURL = Bundle.main.url(forResource: "area02", withExtension: "jpg")
+                imageURL = URL(string: "http://47.101.37.141:8080/ibeacon/area02.jpg")
+            case 3: //imageURL = Bundle.main.url(forResource: "area03", withExtension: "jpg")
+                imageURL = URL(string: "http://47.101.37.141:8080/ibeacon/area03.jpg")
             default: imageURL = Bundle.main.url(forResource: "default", withExtension: "jpg")
             }
         }

@@ -2,6 +2,9 @@
 //  AppDelegate.swift
 //  iBeaconReceiver
 //
+//  Created by Yuzhe Tian on 2018/5/9.
+//  Copyright © 2018年 Paul Tian. All rights reserved.
+//
 
 import UIKit
 
