@@ -13,4 +13,4 @@ https://developer.apple.com/documentation/corelocation/determining_the_proximity
 https://developer.apple.com/documentation/corelocation/turning_an_ios_device_into_an_ibeacon  
 //use an iPad as an iBeacon devices
 
- After detecting an iBeacon, use ranging to determine the relative distance between the beacon and the user’s device. Ranging reports when the two devices are *far* apart, *near* to each other, or in the *immediate* vicinity of each other; it does not offer a precise distance, 
+After detecting an iBeacon, use ranging to determine the relative distance between the beacon and the user’s device. Ranging reports when the two devices are *far* apart, *near* to each other, or in the *immediate* vicinity of each other; it does not offer a precise distance.
