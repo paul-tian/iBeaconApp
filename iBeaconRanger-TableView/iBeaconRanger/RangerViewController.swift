@@ -34,35 +34,35 @@ class RangerViewController: UIViewController, UITableViewDataSource {
 //            if lastClosetBeacon!.accuracy < iBeaconConfiguration.minimumAccuracy {
 //                switch major {
 //                case 1:
-//                    jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/area01/area01.json")
+//                    jsonURL = URL(string: "http://www.example.com/path/to/area01.json")
 //                case 2:
-//                    jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/area02/area02.json")
+//                    jsonURL = URL(string: "http://www.example.com/path/to/area02.json")
 //                case 3:
-//                    jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/area03/area03.json")
+//                    jsonURL = URL(string: "http://www.example.com/path/to/area03.json")
 //                default:
-//                    jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/default/default.json")
+//                    jsonURL = URL(string: "http://www.example.com/path/to/default.json")
 //                }
 //            } else {
-//                jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/default/default.json")
+//                jsonURL = URL(string: "http://www.example.com/path/to/default.json")
 //            }
 //        } else {
-//            jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/default/default.json")
+//            jsonURL = URL(string: "http://www.example.com/path/to/default.json")
 //        }
         
         if lastClosetBeacon != nil, lastClosetBeacon!.accuracy < iBeaconConfiguration.minimumAccuracy {
             let major = lastClosetBeacon!.major.intValue
             switch major {
             case 1:
-                jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/area01/area01.json")
+                jsonURL = URL(string: "http://www.example.com/path/to/area01.json")
             case 2:
-                jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/area02/area02.json")
+                jsonURL = URL(string: "http://www.example.com/path/to/area02.json")
             case 3:
-                jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/area03/area03.json")
+                jsonURL = URL(string: "http://www.example.com/path/to/area03.json")
             default:
-                jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/default/default.json")
+                jsonURL = URL(string: "http://www.example.com/path/to/default.json")
             }
         } else {
-            jsonURL = URL(string: "http://47.101.37.141:8080/ibeacon/default/default.json")
+            jsonURL = URL(string: "http://www.example.com/path/to/default.json")
         }
         
         guard let downloadURL = jsonURL else { return }

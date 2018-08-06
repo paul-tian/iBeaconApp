@@ -54,11 +54,11 @@ class RangerViewController: UIViewController, UIScrollViewDelegate {
             let major = currentClosetBeacon!.major.intValue
             switch major {
             case 1: //imageURL = Bundle.main.url(forResource: "area01", withExtension: "jpg")
-                imageURL = URL(string: "http://47.101.37.141:8080/ibeacon/area01.jpg")
+                imageURL = URL(string: "http://www.example.com/path/to/area01.jpg")
             case 2: //imageURL = Bundle.main.url(forResource: "area02", withExtension: "jpg")
-                imageURL = URL(string: "http://47.101.37.141:8080/ibeacon/area02.jpg")
+                imageURL = URL(string: "http://www.example.com/path/to/area02.jpg")
             case 3: //imageURL = Bundle.main.url(forResource: "area03", withExtension: "jpg")
-                imageURL = URL(string: "http://47.101.37.141:8080/ibeacon/area03.jpg")
+                imageURL = URL(string: "http://www.example.com/path/to/area03.jpg")
             default: imageURL = Bundle.main.url(forResource: "default", withExtension: "jpg")
             }
         }
