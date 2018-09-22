@@ -144,6 +144,7 @@
 				TargetAttributes = {
 					DA6414F720A2E49200A6E48B = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -345,7 +346,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = PaulT.iBeaconRanger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -363,7 +364,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = PaulT.iBeaconRanger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

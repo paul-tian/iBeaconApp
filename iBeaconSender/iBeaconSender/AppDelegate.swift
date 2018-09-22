@@ -2,6 +2,9 @@
 //  AppDelegate.swift
 //  iBeaconSender
 //
+//  Created by Yuzhe Tian on 2018/5/12.
+//  Copyright © 2018 Paul Tian. All rights reserved.
+//
 
 import UIKit
 import UserNotifications
@@ -13,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(
         _ application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
         ) -> Bool {
         // Override point for customization after application launch.
         return true

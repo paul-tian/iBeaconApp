@@ -3,7 +3,7 @@
 //  iBeaconRanger
 //
 //  Created by Yuzhe Tian on 2018/6/7.
-//  Copyright © 2018年 Paul Tian. All rights reserved.
+//  Copyright © 2018 Paul Tian. All rights reserved.
 //
 
 import UIKit
@@ -22,7 +22,7 @@ class BackgroundNotification: UIResponder{
         
         //content.sound = UNNotificationSound.`default`()
         //content.badge = 1
-        content.sound = UNNotificationSound(named: "bubble.wav")
+        content.sound = UNNotificationSound(named: convertToUNNotificationSoundName("bubble.wav"))
         content.title = "Statistic Status"
         
 
@@ -66,3 +66,8 @@ class BackgroundNotification: UIResponder{
 }
 
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUNNotificationSoundName(_ input: String) -> UNNotificationSoundName {
+	return UNNotificationSoundName(rawValue: input)
+}

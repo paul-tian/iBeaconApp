@@ -3,7 +3,11 @@
 //  iBeaconRanger
 //
 //  Created by Yuzhe Tian on 2018/6/7.
-//  Copyright © 2018年 Paul Tian. All rights reserved.
+//  Copyright © 2018 Paul Tian. All rights reserved.
+//
+// This file contains open-source codes which written by:
+//  Copyright © 2017 Saoud M. Rizwan. All rights reserved.
+//  https://medium.com/@sdrzn/swift-4-codable-lets-make-things-even-easier-c793b6cf29e1
 //
 
 import Foundation

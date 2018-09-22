@@ -2,6 +2,9 @@
 //  MiscellaneousExtension.swift
 //  iBeaconReceiver
 //
+//  Created by Yuzhe Tian on 2018/5/12.
+//  Copyright © 2018 Paul Tian. All rights reserved.
+//
 
 import Foundation
 

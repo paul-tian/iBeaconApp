@@ -2,6 +2,9 @@
 //  ViewController.swift
 //  iBeaconSender
 //
+//  Created by Yuzhe Tian on 2018/5/12.
+//  Copyright © 2018 Paul Tian. All rights reserved.
+//
 
 import UIKit
 import CoreLocation
@@ -120,8 +123,8 @@ extension BroadcastViewController {
         
         let buttonTitleColor: UIColor = (self.broadcasting) ? UIColor.iOSBlueColor() : UIColor.iOSWhiteColor()
         
-        sender.setTitle(titleFromStatus(), for: UIControlState.normal)
-        sender.setTitleColor(buttonTitleColor, for: UIControlState.normal)
+        sender.setTitle(titleFromStatus(), for: UIControl.State.normal)
+        sender.setTitleColor(buttonTitleColor, for: UIControl.State.normal)
         
         let labelTextFromStatus: () -> String = {
             let text: String = (self.broadcasting) ? "Not Broadcast" : "Broadcasting..."

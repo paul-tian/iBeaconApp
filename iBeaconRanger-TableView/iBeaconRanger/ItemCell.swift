@@ -3,7 +3,7 @@
 //  iBeaconRanger
 //
 //  Created by Yuzhe Tian on 2018/5/27.
-//  Copyright © 2018年 Paul Tian. All rights reserved.
+//  Copyright © 2018 Paul Tian. All rights reserved.
 //
 
 import UIKit
